@@ -11,7 +11,7 @@ ReactDOM.hydrate(element, container[, callback])
 > Same as render(), but is used to hydrate a container whose HTML contents were rendered by ReactDOMServer. React will attempt to attach event listeners to the existing markup 
 [more>](https://reactjs.org/docs/react-dom.html#hydrate)
 
-也就是说使用hydrate方法，组件从 VDOM 到 真实 DOM 的第一次的 render就被省略了，直接向服务端返回的HTML 内容绑定事件
+hydrate是 React 中提供在初次渲染的时候，去复用原本已经存在的 DOM 节点，减少重新生成节点以及删除原本 DOM 节点的开销，来加速初次渲染的功能 并向已经存在的dom节点绑定事件
 #### 路由
 ```
 <staticRouter />   
