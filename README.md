@@ -12,11 +12,13 @@ ReactDOM.hydrate(element, container[, callback])
 [more>](https://reactjs.org/docs/react-dom.html#hydrate)
 
 也就是说使用hydrate方法，组件从 VDOM 到 真实 DOM 的第一次的 render就被省略了，直接向服务端返回的HTML 内容绑定事件
+#### 路由
 ```
 <staticRouter />   
 ```
 [StaticRouter]((https://reacttraining.com/react-router/web/api/StaticRouter)) 是 React-Router 针对服务器端渲染专门提供的一个路由组件
 
+在服务器端需要通过请求路径，找到路由组件，而在客户端需通过浏览器中的网址，找到路由组件，是完全不同的两套机制，所以这部分代码是肯定无法公用,在客户端使用`<BrowserRouter />`在服务端使用`<staticRouter />  `
 
 ### react-ssr-simple
 项目中是一个简单的react ssr
