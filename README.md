@@ -1,9 +1,10 @@
 ### react SSR
 SSR: Server Side Render 服务端渲染
-
+实际上是客户端渲染和服务器端渲染的一个整合。我们把页面的展示内容和交互写在一起，让代码执行两次。在服务器端执行一次，用于实现服务器端渲染，在客户端再执行一次，用于接管页面交互
 渲染流程如下图：
 ![img1](./assets/reactssr1.png)
 ![img2](./assets/reactssr2.png)
+### 重点的API
 ```
 ReactDOM.hydrate(element, container[, callback])
 ```
@@ -11,6 +12,11 @@ ReactDOM.hydrate(element, container[, callback])
 [more>](https://reactjs.org/docs/react-dom.html#hydrate)
 
 也就是说使用hydrate方法，组件从 VDOM 到 真实 DOM 的第一次的 render就被省略了，直接向服务端返回的HTML 内容绑定事件
+```
+<staticRouter />   
+```
+[StaticRouter]((https://reacttraining.com/react-router/web/api/StaticRouter)) 是 React-Router 针对服务器端渲染专门提供的一个路由组件
+
 
 ### react-ssr-simple
 项目中是一个简单的react ssr
